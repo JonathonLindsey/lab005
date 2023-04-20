@@ -1,0 +1,23 @@
+{
+  "name": "lab005",
+  "version": "1.0.0",
+  "description": "Lab5",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Moaninglisa/LAB5.git"
+  },
+  "author": "Jonathon Lindsey",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Moaninglisa/LAB5/issues"
+  },
+  "homepage": "https://github.com/Moaninglisa/LAB5#readme",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2"
+  }
+}
