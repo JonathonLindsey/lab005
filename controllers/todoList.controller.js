@@ -1,4 +1,4 @@
-const TodoListCoordinator = require('../Coordinators/todoList.coordinator');
+const TodoListCoordinator = require('../coordinators/todoList.coordinators');
 
 const getTodoList = async (req, res, next) => {
     console.log('todoListController.getTodoList');
@@ -23,7 +23,7 @@ const createTodo = async (req, res, next) => {
     console.log('todoListController.createTodo');
 
 const result = TodoListCoordinator.createTodo(req.body);
-res.status(200).json(results);
+res.status(200).json(result);
 };
 
 const deleteTodo = async (req, res, next) => {

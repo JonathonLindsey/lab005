@@ -4,8 +4,8 @@ const router = express.Router();
 
 router.get('/', todoListController.getTodoList);
 router.get('/:id', todoListController.getTodoList);
-router.post('/', todoListController.createTodoList);
-router.delete('/:id', todoListaController.deleteTodo);
+router.post('/', todoListController.createTodo);
+router.delete('/:id', todoListController.deleteTodo);
 router.put('/:id', todoListController.replaceTodo);
 router.patch('/:id', todoListController.updateTodo);
 

@@ -1,7 +1,15 @@
+let todoListData = [
+  {id: "a41abaa6-d1e9-4ecb-9d50-e2e55f4d569d", "Get dog food":"medium"},
+  {id: "407c100c-d408-4da5-ac4f-057b5b775505", "Apply for new jobs":"high"},
+  {id: "a9f2660a-9584-49f6-a250-5e74841d0e11", "Take car to shop":"low"},
+  {id: "45ccf5c6-0ba9-43be-9cba-07b8897e6fd8", "Look for a new home":"medium"},
+  {id: "29bdb63a-6633-45a4-9e10-1bd060c09827", "Tattoo appointement coming up":"low"},
+];
+
 class TodoListModel {
     static getTodoList = () => {
       console.log('\t\tTodoListModel.getTodoList');
-      return todolistData;
+      return todoListData;
     };
   
     static getTodo = (id) => {
@@ -14,7 +22,7 @@ class TodoListModel {
     static createTodo = (todo) => {
       console.log('\t\tTodoListModel.createTodo');
   
-      todoListData.push(Todo);
+      todoListData.push(todo);
   
       return todo;
     };
@@ -34,7 +42,7 @@ class TodoListModel {
   
     static replaceTodo = (id, todo) => {
       console.log('\t\tTodoListModel.replaceTodo');
-     const vIndex = TodoListData.findIndex((v) => {
+     const vIndex = todoListData.findIndex((v) => {
         return v.id === id;
       });
   

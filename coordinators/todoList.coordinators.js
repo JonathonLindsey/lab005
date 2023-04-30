@@ -1,5 +1,5 @@
 const { v4: uuidv4 } = require('uuid');
-const TodoListModel = require('../info/todolist.info');
+const TodoListModel = require('../models/todoList.model');
 
 class TodoListCoordinator {
     
@@ -15,12 +15,12 @@ class TodoListCoordinator {
 
     static createTodo = (todo) => {
         console.log('\t TodoListCoordinator.createTodo');
+        todo.id = uuidv4();
         return TodoListModel.createTodo(todo);
     };
 
     static deleteTodo = (id) => {
         console.log('\t TodoListCoordinator.deleteTodo');
-        todo.id = uuidv4();
         return TodoListModel.deleteTodo(id);
     };
 
