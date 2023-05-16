@@ -11,7 +11,6 @@ const getTodo = async (req, res, next) => {
  console.log('todoListConatroller.getTodo');
 
 const foundTodo = TodoListCoordinator.getTodo(req.params.id);
-
 if (foundTodo) {
   res.status(200).json(foundTodo);
 } else {
@@ -30,7 +29,6 @@ const deleteTodo = async (req, res, next) => {
     console.log('todoListController.deleteTodo');
 
 const deleteResult = TodoListCoordinator.deleteTodo(req.params.id);
-
 if (deleteResult) {
     res.status(204).json(deleteResult);
 } else {
@@ -41,8 +39,7 @@ if (deleteResult) {
 const replaceTodo = async (req, res, next) => {
     console.log('todoListController.replaceTodo');
 
-const replaceResults = TodoListCoordinator.replacetodo(req.params.id);
-
+const replaceResults = TodoListCoordinator.replaceTodo(req.params.id, req.body);
 if (replaceResults) {
     res.status(200).json(replaceResults);
 } else {
@@ -53,7 +50,12 @@ if (replaceResults) {
 const updateTodo = async (req, res, next) => {
     console.log('todoListController.updateTodo');
 
-const updateResults = TodoListCoordinator.updateTodo(req.params.id);
+const updateResults = TodoListCoordinator.updateTodo(req.params.id, req.body);
+if (updateResults) {
+    res.status(200).json(updateResults);
+} else {
+    res.status(400).json();
+}
 };
 
 module.exports = {

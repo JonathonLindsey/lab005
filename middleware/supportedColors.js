@@ -1,24 +1,20 @@
-const colorMiddleware = () => {
-    const supportedColors = [
-        'red',
-        'green',
-        'blue'
-        
-    ];
-    return (req, res, next) => {
-        console.log(`SupportedColor: input color = ${req.body.color}`);
-        
-        if (!req.body.color) {
-            req.body.supportedColor = false;
-        } else if (supportedColors.includes(req.body.color)) {
-            req.body.supportedColor = true;
-        } else {
-            req.body.supportedColor = false;
-        }
-
-        next();
-
+function colorToHexMiddleware(req, _res, next) {
+  if (req.body && req.body.color) {
+      const colorMap = {
+        red: "#ff0000",
+        green: "#00ff00",
+        blue: "#0000ff",
+      };
+  
+      const color = req.body.color.toLowerCase();
+  
+      if (colorMap.hasOwnProperty(color)) {
+        req.body.hexColor = colorMap[color];
+      }
     }
-}
+  
+    next();
+  }
+  
 
-module.exports = colorMiddleware;
+module.exports = colorToHexMiddleware;
