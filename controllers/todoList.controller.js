@@ -1,13 +1,13 @@
 const TodoListCoordinator = require('../coordinators/todoList.coordinators');
 
-const getTodoList = async (req, res, next) => {
+const getTodoList = async (_req, res, _next) => {
     console.log('todoListController.getTodoList');
 
     const result = TodoListCoordinator.getTodoList();
     res.status(200).json(result);
 };
 
-const getTodo = async (req, res, next) => {
+const getTodo = async (req, res, _next) => {
  console.log('todoListConatroller.getTodo');
 
 const foundTodo = TodoListCoordinator.getTodo(req.params.id);
@@ -18,14 +18,14 @@ if (foundTodo) {
 }
 };
 
-const createTodo = async (req, res, next) => {
+const createTodo = async (req, res, _next) => {
     console.log('todoListController.createTodo');
 
 const result = TodoListCoordinator.createTodo(req.body);
 res.status(200).json(result);
 };
 
-const deleteTodo = async (req, res, next) => {
+const deleteTodo = async (req, res, _next) => {
     console.log('todoListController.deleteTodo');
 
 const deleteResult = TodoListCoordinator.deleteTodo(req.params.id);
@@ -36,7 +36,7 @@ if (deleteResult) {
 }
 };
 
-const replaceTodo = async (req, res, next) => {
+const replaceTodo = async (req, res, _next) => {
     console.log('todoListController.replaceTodo');
 
 const replaceResults = TodoListCoordinator.replaceTodo(req.params.id, req.body);
@@ -47,7 +47,7 @@ if (replaceResults) {
 }
 };
 
-const updateTodo = async (req, res, next) => {
+const updateTodo = async (req, res, _next) => {
     console.log('todoListController.updateTodo');
 
 const updateResults = TodoListCoordinator.updateTodo(req.params.id, req.body);
